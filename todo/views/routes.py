@@ -1,10 +1,12 @@
-from flask import Blueprint,jsonify
+from flask import Blueprint, jsonify
 
-api = Blueprint('api', __name__, url_prefix='/api/v1')
+api = Blueprint("api", __name__, url_prefix="/api/v1")
 
-@api.route('/health')
+
+
+@api.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok"}),200
+    return jsonify({"status": "ok"}), 200
 
 
 @api.route('/todos', methods=['GET']) 
